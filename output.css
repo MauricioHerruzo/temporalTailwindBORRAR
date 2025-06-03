@@ -7,6 +7,7 @@
       "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
+    --color-amber-50: oklch(98.7% 0.022 95.277);
     --color-black: #000;
     --color-white: #fff;
     --spacing: 0.25rem;
@@ -189,6 +190,15 @@
   .m-8 {
     margin: calc(var(--spacing) * 8);
   }
+  .m-12 {
+    margin: calc(var(--spacing) * 12);
+  }
+  .mx-48 {
+    margin-inline: calc(var(--spacing) * 48);
+  }
+  .flex {
+    display: flex;
+  }
   .table {
     display: table;
   }
@@ -200,6 +210,12 @@
   }
   .resize {
     resize: both;
+  }
+  .justify-end {
+    justify-content: flex-end;
+  }
+  .gap-5 {
+    gap: calc(var(--spacing) * 5);
   }
   .self-center {
     align-self: center;
@@ -215,8 +231,23 @@
     border-style: var(--tw-border-style);
     border-width: 1px;
   }
+  .bg-\[\#BF7E04\] {
+    background-color: #BF7E04;
+  }
+  .bg-\[\#DCBF7C\] {
+    background-color: #DCBF7C;
+  }
+  .bg-\[\#DCBF7C\]\/10 {
+    background-color: color-mix(in oklab, #DCBF7C 10%, transparent);
+  }
   .bg-black {
     background-color: var(--color-black);
+  }
+  .bg-black\/10 {
+    background-color: color-mix(in srgb, #000 10%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      background-color: color-mix(in oklab, var(--color-black) 10%, transparent);
+    }
   }
   .bg-black\/50 {
     background-color: color-mix(in srgb, #000 50%, transparent);
@@ -281,6 +312,9 @@
   .text-xl {
     font-size: var(--text-xl);
     line-height: var(--tw-leading, var(--text-xl--line-height));
+  }
+  .text-amber-50 {
+    color: var(--color-amber-50);
   }
   .underline {
     text-decoration-line: underline;
